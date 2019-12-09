@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class WordcountappConfig(AppConfig):
-    name = 'wordcountapp'
+class WordcountConfig(AppConfig):
+    name = 'wordcount'
