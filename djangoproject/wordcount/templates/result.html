@@ -6,4 +6,7 @@
 {{full}}
 
 <h2> 단어 카운트 : </h2>
-{{dictionary}}
+{% for word, count in dictionary%}
+{{word}} : {{count}}
+<br>
+{%endfor%}
