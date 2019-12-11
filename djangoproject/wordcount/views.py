@@ -10,4 +10,6 @@ def about(request):
 
 def result(request):
     text = request.GET['fulltext']
-    return render(request, 'result.html', {'full':text})
+    words = text.split(' ')
+
+    return render(request, 'result.html', {'full':text, 'total' : len(words)})
