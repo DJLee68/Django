@@ -9,4 +9,5 @@ def about(request):
     return render(request, 'about.html')
 
 def result(request):
-    return render(request, 'result.html')
+    text = request.GET['fulltext']
+    return render(request, 'result.html', {'full':text})
