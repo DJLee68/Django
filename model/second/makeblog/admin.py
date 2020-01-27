@@ -3,4 +3,4 @@ from .models import makeblog
 
 # Register your models here.
 
-admin.site.register(makeblog)
+admin.site.register(Makeblog)
