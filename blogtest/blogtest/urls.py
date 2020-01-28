@@ -19,4 +19,5 @@ import blogtest.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', makeblog.view.home, name='home')
 ]
