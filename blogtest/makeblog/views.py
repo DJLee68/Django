@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import makeblog
+from .models import Makeblog
 
 # Create your views here.
 
