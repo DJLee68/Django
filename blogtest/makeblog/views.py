@@ -5,5 +5,6 @@ from .models import Makeblog
 
 def home(request): #{
     blogs = Makeblog.objects
-    return render(request, 'home.html', {'blogs' : blogs})
+    shorten_body = blogs.summary()
+    return render(request, 'home.html', {'blogs' : blogs, 'shorten_body':shorten_body})
 #}
