@@ -19,5 +19,5 @@ import makeblog.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', makeblog.view.home, name='home')
+    path('', makeblog.views.home, name='home')
 ]
