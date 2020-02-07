@@ -9,5 +9,5 @@ def home(request): #{
 #}
 
 def detail(request): #{
-    
+    return render(request, 'detail.html')
 #}
