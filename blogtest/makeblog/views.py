@@ -7,3 +7,7 @@ def home(request): #{
     blogs = Makeblog.objects
     return render(request, 'home.html', {'blogs' : blogs})
 #}
+
+def detail(request): #{
+    
+#}
