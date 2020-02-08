@@ -59,6 +59,6 @@
         <p> {{ blog.pub_data }}</p>
         <p> {{ blog.summary }}</p>
         <br>
-        <a href="{% url 'detail' %}">...more</a>
+        <a href="{% url 'detail' blog.id %}">...more</a>
     </div>
 {% endfor %}
