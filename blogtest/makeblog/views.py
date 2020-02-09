@@ -18,5 +18,10 @@ def new(request): #{
 #}
 
 def create(request): #{
-    return render(request, 'create.html')
+    blog = Makeblog()
+    blog.title = request.GET['title']
+    blog.body = request.GET['body']
+    blog.pub_data = timezone.datetime.now()
+    blog.save()
+    return
 #}
