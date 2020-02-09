@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', makeblog.views.home, name='home'),
     path('blog/<int:blog_id>', makeblog.views.detail, name='detail'),
-    path('new', makeblog.views.new, name='home')
+    path('new', makeblog.views.new, name='new')
 ]
