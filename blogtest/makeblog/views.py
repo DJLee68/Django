@@ -12,3 +12,7 @@ def detail(request, blog_id): #{
     details = get_object_or_404(Makeblog, pk=blog_id)
     return render(request, 'detail.html', {'details': details})
 #}
+
+def new(request):#{
+
+#}
