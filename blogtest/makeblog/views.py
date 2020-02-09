@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Makeblog
+from django.utils import timezone
 
 # Create your views here.
 
@@ -23,5 +24,5 @@ def create(request): #{
     blog.body = request.GET['body']
     blog.pub_data = timezone.datetime.now()
     blog.save()
-    return
+    return redirect(URL)
 #}
