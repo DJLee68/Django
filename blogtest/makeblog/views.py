@@ -13,6 +13,6 @@ def detail(request, blog_id): #{
     return render(request, 'detail.html', {'details': details})
 #}
 
-def new(request):#{
-
+def new(request): #{
+    return render(request, 'new.html')
 #}
