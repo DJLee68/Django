@@ -24,5 +24,5 @@ def create(request): #{
     blog.body = request.GET['body']
     blog.pub_data = timezone.datetime.now()
     blog.save()
-    return redirect(URL)
+    return redirect('/blog/'+str(blog.id))
 #}
