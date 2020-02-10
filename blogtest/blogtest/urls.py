@@ -23,5 +23,5 @@ urlpatterns = [
     path('blog/<int:blog_id>', makeblog.views.detail, name='detail'),
     path('blog/new/', makeblog.views.new, name='new'),
     path('blog/create', makeblog.views.create, name='create'),
-    path('blog/portfolio', makeblog.views.portfolio, name='portfolioa')
+    path('blog/portfolio', makeblog.views.portfolio, name='portfolio')
 ]
