@@ -127,3 +127,5 @@ STATICFILES_DIRS = [
 # static 파일들이 현재 어디에 있는지를 쓰는 곳
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# static 파일들이 어디로 모일 것인 지 쓰는 곳
