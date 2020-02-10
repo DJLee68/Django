@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'makeblog.apps.MakeblogConfig'
+    'makeblog.apps.MakeblogConfig',
+    'portfolio.apps.PortfolioConfig'
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'portfolio', 'static')
+]
+# static 파일들이 현재 어디에 있는지를 쓰는 곳
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
