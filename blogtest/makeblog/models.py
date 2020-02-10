@@ -16,3 +16,7 @@ class Makeblog(models.Model): #{
     #}
 
 #}
+
+class Portfolio(models.Model): #{
+
+#}
