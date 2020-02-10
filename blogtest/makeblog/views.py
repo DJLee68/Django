@@ -26,3 +26,7 @@ def create(request): #{
     blog.save()
     return redirect('/blog/'+str(blog.id))
 #}
+
+def portfolio(request): #{
+    return render(request, 'portfolio.html')
+#}
