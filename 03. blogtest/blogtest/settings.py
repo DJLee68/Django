@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'makeblog.apps.MakeblogConfig',
-    'portfolio.apps.PortfolioConfig'
+    'portfolio.apps.PortfolioConfig',
+    'account.apps.AccountConfig'
 ]
 
 MIDDLEWARE = [
