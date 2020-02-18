@@ -6,7 +6,7 @@
 
 <h1> Sign up! </h1>
 
-<form methon ='POST' action="{% url 'signup' %}">
+<form method ='POST' action="{% url 'signup' %}">
     {% csrf_token %}
     Username: 
     <br>
@@ -19,6 +19,12 @@
     Confirm Password:
     <br>
     <input name='password2' type='password' value=''>
+    <br>
+    <br>
+    <input class='btn btn-primary' type='submit' value='Sign Up!'>
+    
 
 </form>
 </div>
+
+{% endblock %}
