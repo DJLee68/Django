@@ -7,7 +7,7 @@
 <h1> Sign up! </h1>
 
 <form method ='POST' action="{% url 'signup' %}">
-    {% csrf_token %}
+    {% csrf_token %} <!-- 보안을 위해 써주는 난수 발생기(CSRF 공격 방어)-->
     Username: 
     <br>
     <input name='username' type='text' value="">
