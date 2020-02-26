@@ -39,5 +39,4 @@ def logout(request): #{
         return redirect('home')
     #}
     return render(request, 'login.html')
-
 #}
