@@ -9,7 +9,12 @@ def home(request): #{
     blogs = Makeblog.objects
     #블로그 모든 글들을 대상으로
     blog_list = Make.objects.all()
+    #블로그 객체 세 개를 한 페이지로 자르기
     paginator = Paginator(blog_list, 3)
+    #request된 페이지가 뭔지를 알아내고 (request 페이지를 변수에 담아내고)
+    page = request.GET.get('page')
+    #request된 페이지를 얻어온 뒤 return 해 준다.
+    posts = paginator.get_page(page)
     return render(request, 'home.html', {'blogs' : blogs})
 #}
 
