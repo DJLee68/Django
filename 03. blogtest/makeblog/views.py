@@ -15,7 +15,7 @@ def home(request): #{
     page = request.GET.get('page')
     #request된 페이지를 얻어온 뒤 return 해 준다.
     posts = paginator.get_page(page)
-    return render(request, 'home.html', {'blogs' : blogs})
+    return render(request, 'home.html', {'blogs' : blogs, 'posts' : posts})
 #}
 
 def detail(request, blog_id): #{
