@@ -1,11 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Makeblog
 from django.utils import timezone
+from django.core.paginator import Paginator
 
 # Create your views here.
 
 def home(request): #{
     blogs = Makeblog.objects
+    #블로그 모든 글들을 대상으로
+    blog_list = Make.objects.all()
+    paginator = Paginator(blog_list, 3)
     return render(request, 'home.html', {'blogs' : blogs})
 #}
 
