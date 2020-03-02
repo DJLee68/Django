@@ -46,6 +46,8 @@ def blogpost(request): #{
         if form.is_valid(): #{
             post = form.save(commit=False)
             post.pub_data = timezone.now()
+            post.save()
+            return redirect('home')
         #}
     #}
     else: #{
