@@ -42,6 +42,10 @@ def blogpost(request): #{
     # 2. 빈 페이지를 띄워주는 기능 -> GET
 
     if request.method == 'POST': #{
+        form = BlogPost(request.POST)
+        if form.is_valid(): #{
+            
+        #}
     #}
     else: #{
         form = BlogPost()
