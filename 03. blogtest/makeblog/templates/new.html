@@ -6,7 +6,8 @@
     <form method="POST">
     {% csrf_token %}
     <tabel>
-        {{form.as_tabel}}
+        {{form.as_table}}
+        <br>
     </tabel>
     <br>
         <input class = 'btn btn-dark' type='submit' value='제출하기'>
