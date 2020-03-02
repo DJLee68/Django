@@ -44,5 +44,7 @@ def blogpost(request): #{
     if request.method == 'POST': #{
     #}
     else: #{
+        form = BlogPost()
+        return render(request, 'new.html', {'form': form})
     #}
 #}
