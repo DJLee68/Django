@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Makeblog
 from django.utils import timezone
 from django.core.paginator import Paginator
+from .form import BlogPost
 
 # Create your views here.
 
@@ -34,4 +35,8 @@ def create(request): #{
     blog.pub_data = timezone.datetime.now()
     blog.save()
     return redirect('/blog/'+str(blog.id))
+#}
+
+def blogpost(request): #{
+
 #}
