@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'makeblog.apps.MakeblogConfig',
     'portfolio.apps.PortfolioConfig',
-    'account.apps.AccountConfig'
+    'account.apps.AccountConfig',
+    'social_login.apps.Social_loginConfig'
 ]
 
 MIDDLEWARE = [
