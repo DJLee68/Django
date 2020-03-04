@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'makeblog.apps.MakeblogConfig',
     'portfolio.apps.PortfolioConfig',
     'account.apps.AccountConfig',
-    'social_login.apps.Social_loginConfig'
+    'social_login.apps.SocialLoginConfig'
 ]
 
 MIDDLEWARE = [

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 import makeblog.views
 import portfolio.views
+import social_login.views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,5 +28,5 @@ urlpatterns = [
     path('blog/', include('makeblog.urls')),
     path('port/portfolio', portfolio.views.portfolio, name='portfolio'),
     path('account/', include('account.urls')),
-    
+    path('social_login/', social_login.views.home, name = 'social_home')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
