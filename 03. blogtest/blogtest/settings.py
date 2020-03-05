@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -40,7 +41,14 @@ INSTALLED_APPS = [
     'makeblog.apps.MakeblogConfig',
     'portfolio.apps.PortfolioConfig',
     'account.apps.AccountConfig',
-    'social_login.apps.SocialLoginConfig'
+    'social_login.apps.SocialLoginConfig',
+
+    # allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # provider
 ]
 
 MIDDLEWARE = [
