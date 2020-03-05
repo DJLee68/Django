@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'makeblog.apps.MakeblogConfig',
     'portfolio.apps.PortfolioConfig',
-    'account.apps.AccountConfig',
+    'account_default.apps.AccountDefaultConfig',
     'social_login.apps.SocialLoginConfig',
 
     # allauth
@@ -49,8 +49,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     # provider --> 소셜 로그인을 제공해주는 업체
-    'allauth.socialaccount.provider.google',
-    'allauth.socialaccount.provider.facebook'
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.facebook'
 ]
 
 MIDDLEWARE = [
