@@ -50,7 +50,6 @@ INSTALLED_APPS = [
 
     # provider --> 소셜 로그인을 제공해주는 업체
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.facebook'
 ]
 
 MIDDLEWARE = [
