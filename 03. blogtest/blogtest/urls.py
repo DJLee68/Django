@@ -24,11 +24,11 @@ from django.conf.urls.static import static
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('home/', makeblog.views.home, name='home'),
+    path('', makeblog.views.home, name='home'),
     path('blog/', include('makeblog.urls')),
     path('port/portfolio', portfolio.views.portfolio, name='portfolio'),
     path('account/', include('account_default.urls')),
-    path('', social_login.views.home, name = 'social_home'),
+    path('social_login/', social_login.views.home, name = 'social_home'),
     path('social_account/', include('allauth.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

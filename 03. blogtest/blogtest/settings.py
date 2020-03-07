@@ -147,7 +147,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
 
-AUTHENTICATION_BACKENDS = (
+AUTHENTICATION_BACKEND = (
 
     # Needed to login by username in Django admin, regardless of 'allauth'
     'django.contrib.auth.backends.ModelBackend',
@@ -158,7 +158,7 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'social_login/'
 
 
 # 기타 설정들 #
