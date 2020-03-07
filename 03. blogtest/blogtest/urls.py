@@ -28,7 +28,7 @@ urlpatterns = [
     path('blog/', include('makeblog.urls')),
     path('port/portfolio', portfolio.views.portfolio, name='portfolio'),
     path('account/', include('account_default.urls')),
-    path('social_login/', social_login.views.home, name = 'social_home'),
+    path('social_login/', social_login.views.social_home, name = 'social_home'),
     path('social_account/', include('allauth.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
