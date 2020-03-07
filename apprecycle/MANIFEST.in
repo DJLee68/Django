@@ -1,0 +1,4 @@
+include LICENSE
+incluse README.rst
+
+recursive-include blog/templates *
