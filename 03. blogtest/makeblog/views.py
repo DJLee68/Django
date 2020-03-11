@@ -48,6 +48,7 @@ def blogpost(request): #{
             return redirect('home')
         #}
     #}       
+    
     # 2. 빈 페이지를 띄워주는 기능 -> GET
 
     else: #{
