@@ -14,5 +14,4 @@ class Makeblog(models.Model): #{
     def summary(self): #{
         return self.body[:100]
     #}
-
 #}
