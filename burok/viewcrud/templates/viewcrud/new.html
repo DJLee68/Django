@@ -1,0 +1,15 @@
+<head>
+    <title> crud 연습</title>
+</head>
+
+<body>
+
+    <form method="POST">
+        {% csrf_token %}
+        <tabel>
+            {{form.as_table}}
+        </tabel>
+        <br>
+        <input type='submit' value="제출하기">
+    </form>
+</body>
