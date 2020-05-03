@@ -14,3 +14,7 @@ def read(request): #{
     return render(request, 'viewcrud/funccrud.html', {'blogs':blogs})
 #}
 
+def create(request)
+
+
+
