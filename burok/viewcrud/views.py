@@ -41,9 +41,14 @@ def update(request, pk): #{
     # 어떤 블로그를 수정할 지 블록 객체를 갖고기
     blog = get_object_or_404(Blog, pk = pk)
 
-    # 해당하는 블로그 객체의 입력공간
-    
-    return
+    # 해당하는 블로그 PK에 맞는 입력공간
+    form = NewBlog(request.POST, instance = blog)
+
+    if form.is_valid(): #{
+        form.save()
+        return redirect('home')
+    #}
+    return render(request, 'viewcrud/new.html', {'form' : form})
 #}
 
 def delete(request, pk): #{
