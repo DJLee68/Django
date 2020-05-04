@@ -37,5 +37,10 @@ def create(request): #{
     return 
 #}
 
+def update(request, pk): #{
+    return
+#}
 
-
+def delete(request, pk): #{
+    return
+#}
