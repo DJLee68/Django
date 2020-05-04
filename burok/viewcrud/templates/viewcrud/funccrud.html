@@ -10,7 +10,7 @@
         <h2> {{blog.title}} </h2>
         <p> {{blog.pub_data}} </p>
         <p> {{blog.body}} </p>
-        <a href = "{% url '' %}"> 수정 </a>
+        <a href = "{% url 'update' blog.id %}"> 수정 </a>
         <a href = "{% url 'delete' blog.id %}"> 삭제 </a>
         <hr>
     {% endfor %}
