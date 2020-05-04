@@ -44,5 +44,5 @@ def update(request, pk): #{
 def delete(request, pk): #{
     blog = get_object_or_404(Blog, pk = pk)
     blog.delete()
-    return
+    return redirect('home')
 #}
