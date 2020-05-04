@@ -11,7 +11,7 @@
         <p> {{blog.pub_data}} </p>
         <p> {{blog.body}} </p>
         <a href = "{% url '' %}"> 수정 </a>
-        <a href = "{% url 'delete' %}"> 삭제 </a>
+        <a href = "{% url 'delete' blog.id %}"> 삭제 </a>
         <hr>
     {% endfor %}
 </body>
