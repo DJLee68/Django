@@ -8,7 +8,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import ClassBlog
 # Create your views here.
 
-class BlogView(ListView): #{
+class BlogView(ListView): #{    #html 템플릿
     model = ClassBlog
 #}
 class BlogCreate(CreateView): #{
