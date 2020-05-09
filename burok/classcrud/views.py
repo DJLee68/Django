@@ -26,7 +26,7 @@ class BlogUpdate(UpdateView): #{ html: form(입력공간)을 가지고 있는 ht
     success_url = reverse_lazy('list')
 #}
 
-class BlogDelete(DeleteView): #{ html: '이거 진짜 지울거야?'
+class BlogDelete(DeleteView): #{ html: '이거 진짜 지울거야?' html
     model = ClassBlog
     success_url = reverse_lazy('list')
 #}
