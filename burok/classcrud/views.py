@@ -17,16 +17,16 @@ class BlogCreate(CreateView): #{ html: form(입력공간)을 가지고 있는 ht
     success_url = reverse_lazy('list')
 #}
 
-class BlogDetail(DetailView): #{
+class BlogDetail(DetailView): #{ html: 상세 페이지를 담은 html
     model = ClassBlog
 #}
-class BlogUpdate(UpdateView): #{
+class BlogUpdate(UpdateView): #{ html: form(입력공간)을 가지고 있는 html
     model = ClassBlog
     fields = ['title', 'body']
     success_url = reverse_lazy('list')
 #}
 
-class BlogDelete(DeleteView): #{
+class BlogDelete(DeleteView): #{ html: '이거 진짜 지울거야?'
     model = ClassBlog
     success_url = reverse_lazy('list')
 #}
