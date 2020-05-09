@@ -9,6 +9,13 @@ from .models import ClassBlog
 # Create your views here.
 
 class BlogView(ListView): #{ html 템플릿 : 블로그 리스트를 담은 html --> (소문자모델)_list.html
+    
+    # html을 다른 이름으로 하고 싶을 때
+    template_name = 'classcrud/list.html'
+
+    # 다른 객체를 사용하고 싶을 때
+    context_object_name = 'blog_list'
+
     model = ClassBlog
 #}
 class BlogCreate(CreateView): #{ html: form(입력공간)을 가지고 있는 html --> (소문자모델)_form.html
@@ -18,6 +25,8 @@ class BlogCreate(CreateView): #{ html: form(입력공간)을 가지고 있는 ht
 #}
 
 class BlogDetail(DetailView): #{ html: 상세 페이지를 담은 html --> (소문자모델)_detail.html
+    
+    context_object_name = 'blogpost'
     model = ClassBlog
 #}
 class BlogUpdate(UpdateView): #{ html: form(입력공간)을 가지고 있는 html --> (소문자모델)_form.html
