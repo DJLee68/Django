@@ -8,10 +8,10 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import ClassBlog
 # Create your views here.
 
-class BlogView(ListView): #{    #html 템플릿
+class BlogView(ListView): #{ html 템플릿 : 블로그 리스트를 담은 html
     model = ClassBlog
 #}
-class BlogCreate(CreateView): #{
+class BlogCreate(CreateView): #{ html: form(입력공간)을 가지고 있는 html
     model = ClassBlog
     fields = ['title', 'body']
     success_url = reverse_lazy('list')
