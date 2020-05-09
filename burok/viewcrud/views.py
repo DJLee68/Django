@@ -33,8 +33,6 @@ def create(request): #{
         form = NewBlog()
         return render(request, 'viewcrud/new.html', {'form' : form})
     #}
-
-    return 
 #}
 
 def update(request, pk): #{
