@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework', # rest를 installed app에 등록
+    'post',
 ]
 
 MIDDLEWARE = [
