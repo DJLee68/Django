@@ -20,7 +20,12 @@ class PostList(APIView): #{
         return Response(serializer.data) # 직접 Response 리턴해주기 : serializer.data    
     #}
 
-    def put(self, request, pk, format=None): #{
-        
+    def post(self, request): #{
+        serializer = Postderializer(data=request.data)
+        if serializer.is_valid(): #{ 직접 유효성 검사
+            serializer.save()     # 저장
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        #}
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     #}
 #}
