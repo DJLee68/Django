@@ -44,9 +44,22 @@ class PostDetail(APIView): #{
 
     def get(self, request, pk, format=None): #{
         post = self.get_objet(pk)
-        # post = get_object_or_4-4(Post, pk)
+        # post = get_object_or_404(Post, pk)
         serializer = PostSerializer(post)
         return Response(serializer.data)
     #}
+
+    # 위 post 메소드와 비슷비슷한 논리
+
+    def put(self, request, pk, format=None): #{
+        post = self.get_objet(pk)
+        serializer = PostSerializer(post, data=request.data)
+        if serializer.is_valid(): #{
+            serializer.save()
+            return Response(serializer.data)
+        #}
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    #}
+
     
 #}
