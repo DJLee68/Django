@@ -12,11 +12,12 @@ from rest_framework.views import APIView
 #Postdetail 클래스의 get_object 메소드 대신 이거 써도 된다
 # from django.shortcuts import get_object_or_404
 
+ 
 class PostList(APIView): #{
     def get(self, request, format=None): #{
-        Posts = Post.object.all()
-        serializer = PostSerializer(Posts, many=True)
-        return Response(serializer.data)    
+        posts = Post.object.all()
+        serializer = PostSerializer(posts, many=True) # 쿼리셋 넘기기 (다수의 객체를 seralize 시킬 땐, many=True인자)
+        return Response(serializer.data) # 직접 Response 리턴해주기 : serializer.data    
     #}
 
     def put(self, request, pk, format=None): #{
