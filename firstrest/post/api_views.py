@@ -6,7 +6,8 @@ from rest_framework.response import Response
 from rest_framework import status
 
 class SnippetList(APIView): #{
-
-    def get_object(self, request, format=None):
-
+    def get(self, request, format=None): #{
+        snippets = Snippet.object.all()
+        serializer = SnippetSerializer(snippets, many=True)    
+    #}
 #}
