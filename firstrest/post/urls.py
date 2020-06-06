@@ -1,12 +1,24 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from . import views
-
+from rest_framework.urlpatterns import format_suffix_patterns
+from . import api_views
 # django rest framework -> router를 이용해 url 결정
 
-router = DefaultRouter()
-router.register('post', views.PostViewset)
+# router = DefaultRouter()
+# router.register('post', views.PostViewset)
+
+
+# APIView 사용 시 Default Router 사용 x ==> API ROOT 없음.
 
 urlpatterns = [
-    path('', include(router.urls)),
+    # for viewset
+    # path('', include(router.urls)),
+    
+    # 127.0.0.1:8000/post == ListView
+    path('post/', api_views.PostList.as_view()),
+    # 127.0.0.1:8000/post/<pk> == DetailView
+    path('post/<int:pk>', api_views.PostDetail.as_view()),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)

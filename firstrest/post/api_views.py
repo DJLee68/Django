@@ -1,6 +1,6 @@
 #데이터 처리 대상
-from Posts.models import Post
-from Posts.serializers import PostSerializer
+from .models import Post
+from .serializer import PostSerializer
 
 # status에 따라 직접 Response를 처리할 것
 from django.http import Http404 # Get Object or 404 직접 구현
@@ -15,7 +15,7 @@ from rest_framework.views import APIView
  
 class PostList(APIView): #{
     def get(self, request, format=None): #{
-        posts = Post.object.all()
+        posts = Post.objects.all()
         serializer = PostSerializer(posts, many=True) # 쿼리셋 넘기기 (다수의 객체를 seralize 시킬 땐, many=True인자)
         return Response(serializer.data) # 직접 Response 리턴해주기 : serializer.data    
     #}
@@ -29,6 +29,8 @@ class PostList(APIView): #{
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     #}
 
+    # put이나 delete 같은 다른 함수도 추가 가능!
+    
     # Respone 인자 -> 1. 데이터 2. status 3. 템플릿
 #}
 
