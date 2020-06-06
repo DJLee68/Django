@@ -28,4 +28,25 @@ class PostList(APIView): #{
         #}
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     #}
+
+    # Respone 인자 -> 1. 데이터 2. status 3. 템플릿
+#}
+
+# PostList 클래스와 달리 pk값을 받음 (메소드에 pk인자) 
+class PostDetail(APIView): #{
+    # get_object_or_404를 구현해주는 helper function
+    def get_objet(self, pk): #{
+        try:
+            return Post.objects.get(pk=pk)
+        except Post.DoesNotExist:
+            raise Http404
+    #}
+
+    def get(self, request, pk, format=None): #{
+        post = self.get_objet(pk)
+        # post = get_object_or_4-4(Post, pk)
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
+    #}
+    
 #}
