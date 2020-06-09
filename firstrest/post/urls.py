@@ -3,6 +3,7 @@ from rest_framework.routers import DefaultRouter
 from . import views
 from rest_framework.urlpatterns import format_suffix_patterns
 from . import api_views
+from . import mixin_view
 # django rest framework -> router를 이용해 url 결정
 
 # router = DefaultRouter()
@@ -16,9 +17,9 @@ urlpatterns = [
     # path('', include(router.urls)),
     
     # 127.0.0.1:8000/post == ListView
-    path('post/', api_views.PostList.as_view()),
+    path('post/', mixin_view.PostList.as_view()),
     # 127.0.0.1:8000/post/<pk> == DetailView
-    path('post/<int:pk>', api_views.PostDetail.as_view()),
+    path('post/<int:pk>', mixin_view.PostDetail.as_view()),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
