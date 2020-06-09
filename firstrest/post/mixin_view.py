@@ -15,8 +15,29 @@ class PostList(mixins.ListModelMixin, mixins.CreateModelMixin,
         return self.list(request, *args, **kwargs)
     #}
 
-    # post는 create을 내보내는 메소드
+    # put는 create을 내보내는 메소드
     def post(self, request, *args, **kwargs): #{
         return self.create(request, *args, **kwargs)
+    #}
+#}
+
+class PostDetail(mixins.RetreiveModelMixin, mixins.UpdateModelMixin,
+                mixins.DestroyModelMixin, generics.GenericAPIView): #{
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    # DetailView의 get은 retrieve을 내보내는 메소드
+    def get(self, request, *args, **kwargs): #{
+        return self.retrieve(request, *args, *kwargs)
+    #}
+
+    # post는 cr을 내보내는 메소드
+    def put(self, request, *args, **kwargs): #{
+        return self.create(request, *args, **kwargs)
+    #}
+
+    # delete은 destory를 내보내는 메소드
+    def delete(self, request, *args, **kwargs): #{
+        return self.destroy(request, *args, **kwargs)
     #}
 #}
