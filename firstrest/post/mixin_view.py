@@ -31,7 +31,7 @@ class PostDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
         return self.retrieve(request, *args, *kwargs)
     #}
 
-    # post는 cr을 내보내는 메소드
+    # post는 create을 내보내는 메소드
     def put(self, request, *args, **kwargs): #{
         return self.create(request, *args, **kwargs)
     #}
