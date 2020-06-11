@@ -23,6 +23,7 @@ class PostList(mixins.ListModelMixin, mixins.CreateModelMixin,
 
 class PostDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin,
                 mixins.DestroyModelMixin, generics.GenericAPIView): #{
+    
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
