@@ -9,7 +9,7 @@ from . import mixin_view
 # router = DefaultRouter()
 # router.register('post', views.PostViewset)
 router = DefaultRouter()
-router.register('post', viewset_views.PostReadViewSet)
+router.register('post', viewset_views.PostViewset)
     
 
 # APIView 사용 시 Default Router 사용 x ==> API ROOT 없음.
