@@ -15,6 +15,11 @@ from django.http import HttpResponse
 
 
 # read-only 기능만 필요하면 Readonlymodelviewset 상속해서 클래스 만들면됨
+class PostReadViewSet(viewsets.ReadOnlyModelViewSet): #{
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+#}
+
 class PostViewset(viewsets.ModelViewSet): #{
     queryset = Post.objects.all()
     serializer_class = PostSerializer
