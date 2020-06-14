@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from . import views
+from . import viewset_views
 from rest_framework.urlpatterns import format_suffix_patterns
 from . import api_views
 from . import mixin_view
