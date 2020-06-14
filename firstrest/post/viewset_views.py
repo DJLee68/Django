@@ -20,24 +20,24 @@ class PostReadViewSet(viewsets.ReadOnlyModelViewSet): #{
     serializer_class = PostSerializer
 #}
 
-class PostViewset(viewsets.ModelViewSet): #{
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
+# class PostViewset(viewsets.ModelViewSet): #{
+#     queryset = Post.objects.all()
+#     serializer_class = PostSerializer
 
-    # 권한 설정!
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly] # 이 액션을 실행할 수 있는 권한 설정(인증된 요청에서만)
+#     # 권한 설정!
+#     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly] # 이 액션을 실행할 수 있는 권한 설정(인증된 요청에서만)
 
-    # 나만의 Custom API(로직)을 사용하고 싶을 때 / 내가 직접 view 구현하고 싶을 때
-    # Custom API의 Default Method는 GET이다.
-    @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer]) # renderers -> Response를 어떤 형식으로 Rendering 시킬 것인가
+#     # 나만의 Custom API(로직)을 사용하고 싶을 때 / 내가 직접 view 구현하고 싶을 때
+#     # Custom API의 Default Method는 GET이다.
+#     @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer]) # renderers -> Response를 어떤 형식으로 Rendering 시킬 것인가
     
-    #highlight라는 custom 함수 만들기
-    def highlight(self, request, *args, **kwargs): #{
-        snippet = self.get_object()
-        return Response(Post.highlighted)
-    #}
+#     #highlight라는 custom 함수 만들기
+#     def highlight(self, request, *args, **kwargs): #{
+#         snippet = self.get_object()
+#         return Response(Post.highlighted)
+#     #}
 
-    def perform_create(self, serializer): #{
-        serializer.save(owner=self.request.user)
-    #}
+#     def perform_create(self, serializer): #{
+#         serializer.save(owner=self.request.user)
+#     #}
 #}

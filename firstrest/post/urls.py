@@ -8,18 +8,21 @@ from . import mixin_view
 
 # router = DefaultRouter()
 # router.register('post', views.PostViewset)
-
+router = DefaultRouter()
+router.register('post', viewset_views.PostReadViewSet)
+    
 
 # APIView 사용 시 Default Router 사용 x ==> API ROOT 없음.
 
 urlpatterns = [
     # for viewset
-    # path('', include(router.urls)),
+    
+    path('', include(router.urls)),
     
     # 127.0.0.1:8000/post == ListView
-    path('post/', mixin_view.PostList.as_view()),
-    # 127.0.0.1:8000/post/<pk> == DetailView
-    path('post/<int:pk>', mixin_view.PostDetail.as_view()),
+    # path('post/', mixin_view.PostList.as_view()),
+    # # 127.0.0.1:8000/post/<pk> == DetailView
+    # path('post/<int:pk>', mixin_view.PostDetail.as_view()),
 ]
 
-urlpatterns = format_suffix_patterns(urlpatterns)
+# urlpatterns = format_suffix_patterns(urlpatterns)
