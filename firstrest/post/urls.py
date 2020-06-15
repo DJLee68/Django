@@ -6,8 +6,10 @@ from . import api_views
 from . import mixin_view
 # django rest framework -> router를 이용해 url 결정
 
-# router = DefaultRouter()
-# router.register('post', views.PostViewset)
+# path(요청을 처리할 url, 요청을 인자로 받아 처리할 함수, namespace)
+# 여러 함수를 묶어서 url로 처리 -> .as_view() 함수가 한다 -> 이걸 또 묶어주는게 router!
+
+# router -> router.register(주소 prefix, view 함수)
 router = DefaultRouter()
 router.register('post', viewset_views.PostViewset)
     
