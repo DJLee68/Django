@@ -21,7 +21,7 @@ from django.http import HttpResponse
 # #}
 
 class PostViewset(viewsets.ModelViewSet): #{
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('id')
     serializer_class = PostSerializer
 
     # 권한 설정!
