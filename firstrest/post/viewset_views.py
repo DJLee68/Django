@@ -9,6 +9,10 @@ from rest_framework.response import Response
 from rest_framework import renderers
 from django.http import HttpResponse
 
+# Pagination 클래스 따로 빼기(코드 리팩토링)
+from .pagination import MyPagination
+
+
 # Create your views here.
 
 # CBV
@@ -21,8 +25,11 @@ from django.http import HttpResponse
 # #}
 
 class PostViewset(viewsets.ModelViewSet): #{
-    queryset = Post.objects.all().order_by('id')
+    queryset = Post.objects.all().order_by('id') # 페이지네이션을 할 때는 반드시 레코드를 정렬한 상태에서 페이지네이션을 수행할 것!
     serializer_class = PostSerializer
+    
+    # Customized Pagination
+    pagination_class = MyPagination
 
     # 권한 설정!
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly] # 이 액션을 실행할 수 있는 권한 설정(인증된 요청에서만)
@@ -40,3 +47,5 @@ class PostViewset(viewsets.ModelViewSet): #{
     #     serializer.save(owner=self.request.user)
     # #}
 #}
+
+

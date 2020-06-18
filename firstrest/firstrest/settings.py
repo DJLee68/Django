@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 ]
 
 # 페이지네이션을 할 때는 반드시 레코드를 정렬한 상태에서 페이지네이션을 수행할 것
+# viewset 마다 다른 페이지네이션 적용 가능
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS' : 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE' : 3 # 하나의 페이지당 100개
