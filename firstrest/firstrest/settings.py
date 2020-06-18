@@ -41,9 +41,10 @@ INSTALLED_APPS = [
     'post',
 ]
 
+# 페이지네이션을 할 때는 반드시 레코드를 정렬한 상태에서 페이지네이션을 수행할 것
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS' : 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE' : 100
+    'PAGE_SIZE' : 3 # 하나의 페이지당 100개
 }
 
 MIDDLEWARE = [
