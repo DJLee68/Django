@@ -12,7 +12,7 @@ class UserPostViewSet(viewsets.ModelViewSet): #{
 
     # 검색 기능
     filter_backends = [SearchFilter]
-    search_fields = ('title',) # 어떤 column을 기반으로 검색할 것인지! 무조건 튜플을 인풋으로 받는다
+    search_fields = ('title', 'body', ) # 어떤 column을 기반으로 검색할 것인지! 무조건 튜플을 인풋으로 받는다
 
     # 필터 기능
     def get_queryset(self): #{
