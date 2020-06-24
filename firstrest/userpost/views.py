@@ -14,9 +14,14 @@ class UserPostViewSet(viewsets.ModelViewSet): #{
         qs = super().get_queryset()
         # qs = qs.filter(author__id = 2)
 
-        # 지금 로그인한 유저의 글만 필터링 해라
-        qs = qs.filter(author=self.request.user)
-        
+        # 지금 만약 로그인이 되어있다면, 로그인한 유저의 글만 필터링 해라
+        if self.request.user.is_authenticated:
+            qs = qs.filter(author=self.request.user)
+
+        # 만약 로그인이 안되어있다면, 비어있는 쿼리셋을 리턴해라
+        else:
+            qs = qs.none()
+            
         # .filter .exclude
         return qs
     #}
