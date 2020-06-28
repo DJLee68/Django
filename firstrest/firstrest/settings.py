@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework', # rest를 installed app에 등록
     'post',
     'userpost',
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
 ]
 
 # 페이지네이션을 할 때는 반드시 레코드를 정렬한 상태에서 페이지네이션을 수행할 것
@@ -135,7 +135,7 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES' : [
         'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES' : [
         'rest_framework.permissions.IsAuthenticated',
