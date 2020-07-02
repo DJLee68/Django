@@ -8,5 +8,5 @@ from .serializers import EssaySerializer
 
 class PostViewSet(viewsets.ModelViewSet): #{
     queryset = Essay.objects.all()
-    serializer_class = 
+    serializer_class = EssaySerializer
 #}
