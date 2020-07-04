@@ -15,6 +15,7 @@ class PostViewSet(viewsets.ModelViewSet): #{
     filter_backends = [SearchFilter]
     search_fields = ('title', 'body')
 
+    # 현재 유저로 세팅
     def perform_create(self, serializer): #{
         serializer.save(author=self.request.user)
     #}
@@ -52,6 +53,7 @@ class ImageViewSet(viewsets.ModelViewSet):#{
 class FileViewSet(viewsets.ModelViewSet): #{
     queryset = Files.objects.all()
     serializer_class = FilesSerializer
+
     def perform_create(self, serializer): #{
         serializer.save(author=self.request.user)
     #}
